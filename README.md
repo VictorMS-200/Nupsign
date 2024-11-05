@@ -37,4 +37,4 @@ O projeto foi desenvolvido para a disciplina de Inovação, sustentabilidade e c
 
 ## Licença
 
-Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE.md](LICENSE.md) para obter mais detalhes.
+Este projeto está licenciado sob a licença MIT - consulte o arquivo [LICENSE](LICENSE) para obter mais detalhes.
