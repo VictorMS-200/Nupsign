@@ -1,4 +1,4 @@
-# Nupsign 1.0.0
+# Nupsign 0.1.0
 
 Nupsign é um projeto que visa facilitar e reduzir o tempo dos cartórios na hora de realizar um novo casamento. Através de um sistema de cadastro de casais, o cartório pode realizar o casamento de forma mais rápida e eficiente.
 
@@ -31,9 +31,9 @@ O projeto foi desenvolvido para a disciplina de Inovação, sustentabilidade e c
 
 ## Autores
 
-- Enzo Nascimento Cabrera(https://github.com/EnzoCabrera)
+- [Enzo Nascimento Cabrera](https://github.com/EnzoCabrera)
 - []()
-- []()
+- [Victor Martins de Sousa](https://github.com/VictorMS-200)
 
 ## Licença
 
