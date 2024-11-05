@@ -31,7 +31,7 @@ O projeto foi desenvolvido para a disciplina de Inovação, sustentabilidade e c
 
 ## Autores
 
-- []()
+- Enzo Nascimento Cabrera(https://github.com/EnzoCabrera)
 - []()
 - []()
 
