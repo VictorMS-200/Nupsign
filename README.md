@@ -32,7 +32,7 @@ O projeto foi desenvolvido para a disciplina de Inovação, sustentabilidade e c
 ## Autores
 
 - [Enzo Nascimento Cabrera](https://github.com/EnzoCabrera)
-- []()
+- [Geziel Oliveira Silva](https://github.com/ImG1029)
 - [Victor Martins de Sousa](https://github.com/VictorMS-200)
 
 ## Licença
