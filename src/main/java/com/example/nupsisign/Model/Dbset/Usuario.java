@@ -28,8 +28,21 @@ public class Usuario implements UserDetails {
 
     private String email;
 
+    @Getter
+    private UserRole role;
+
+    @Getter
+    private String senha;
+
     public Usuario() {
 
+    }
+
+    public Usuario(String email, String senha, UserRole role, String nome) {
+        this.email = email;
+        this.senha = senha;
+        this.role = role;
+        this.nome = nome;
     }
 
     @Override
