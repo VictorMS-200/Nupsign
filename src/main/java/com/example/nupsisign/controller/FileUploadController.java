@@ -3,7 +3,9 @@ package com.example.nupsisign.controller;
 import com.example.nupsisign.FileUpload.FileResponse;
 import com.example.nupsisign.FileUpload.FileResponseMessage;
 import com.example.nupsisign.FileUpload.IFileUploadService;
+import com.example.nupsisign.Model.Repositorio.ArquivoRepositorio;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,9 @@ import java.util.List;
 public class FileUploadController {
 
     private final IFileUploadService fileUploadService;
+
+    @Autowired
+    private ArquivoRepositorio arquivoRepositorio;
 
     // This method uploads the files to the uploads directory
     @PostMapping("/upload-files")

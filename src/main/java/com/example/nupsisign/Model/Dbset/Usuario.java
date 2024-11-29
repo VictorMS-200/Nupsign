@@ -21,7 +21,7 @@ public class Usuario implements UserDetails {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String IdUsuario;
+    private String idUsuario;
 
     @Getter
     private String nome;
@@ -33,6 +33,10 @@ public class Usuario implements UserDetails {
 
     @Getter
     private String senha;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_arquivo")
+    private Arquivos arquivos;
 
     public Usuario() {
 

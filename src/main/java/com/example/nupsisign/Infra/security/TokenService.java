@@ -27,7 +27,7 @@ public class TokenService {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
-            return JWT.create().withIssuer("AcademicShare")
+            return JWT.create().withIssuer("NupSign")
                 .withSubject(usuario.getEmail())
                 .withExpiresAt(generateExpirationDate())
                 .sign(algorithm);
@@ -42,7 +42,7 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
             return JWT.require(algorithm)
-                .withIssuer("AcademicShare")
+                .withIssuer("NupSign")
                 .build()
                 .verify(token)
                 .getSubject();
