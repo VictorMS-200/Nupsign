@@ -16,8 +16,8 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
     private final SimpleControllerHandlerAdapter simpleControllerHandlerAdapter;
-    @Value("${api.security.jwt.secret}")
-    private String secret;
+
+    private String secret = "Nupsign1234";
 
     public TokenService(SimpleControllerHandlerAdapter simpleControllerHandlerAdapter) {
         this.simpleControllerHandlerAdapter = simpleControllerHandlerAdapter;

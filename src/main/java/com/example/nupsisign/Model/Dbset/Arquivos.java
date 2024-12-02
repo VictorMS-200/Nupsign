@@ -19,7 +19,7 @@ public class Arquivos {
     @Id
     @Getter
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String IdArquivo;
+    private String idArquivo;
 
     @Getter
     @JsonFormat(pattern="HH:mm | dd/MM/yyyy", timezone="GMT-3")

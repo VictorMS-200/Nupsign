@@ -42,9 +42,9 @@ public class Usuario implements UserDetails {
 
     }
 
-    public Usuario(String email, String senha, UserRole role, String nome) {
+    public Usuario(String email, String encryptedPassword, UserRole role, String nome) {
         this.email = email;
-        this.senha = senha;
+        this.senha = encryptedPassword;
         this.role = role;
         this.nome = nome;
     }
@@ -56,11 +56,11 @@ public class Usuario implements UserDetails {
 
     @Override
     public String getPassword() {
-        return "";
+        return this.senha;
     }
 
     @Override
     public String getUsername() {
-        return "";
+        return this.email;
     }
 }
