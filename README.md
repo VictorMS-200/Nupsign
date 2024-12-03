@@ -96,6 +96,18 @@ Para configurar o token no Postman, vá em Authorization -> Type -> Bearer Token
 
 Para mudar o tempo de expiração do token, vá em application.properties e altere a propriedade jwt.expiration.
 
+#### GET /users
+
+Retorna todos os usuários cadastrados.
+
+#### POST /files/upload-files
+
+Realiza o upload de um ou mais arquivos e retorna com a URL do arquivo.
+Para realizar o upload, selecione a opção form-data e adicione a chave file e o arquivo desejado.
+
+#### GET /files/{filename}
+
+Retorna o arquivo com o nome especificado.
 
 ## Autores
 
