@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 public interface IFileUploadService {
     public void init();
-    public void save(MultipartFile file);
+    public void save(MultipartFile file, String fileName);
     Resource getFileByName(String fileName);
     public void deleteAll();
     Stream<Path> loadAllFiles();

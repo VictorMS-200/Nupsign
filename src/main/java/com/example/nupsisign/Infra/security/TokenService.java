@@ -16,8 +16,11 @@ import java.time.ZoneOffset;
 @Service
 public class TokenService {
     private final SimpleControllerHandlerAdapter simpleControllerHandlerAdapter;
+    @Value("${api.security.jwt.secret}")
+    private String secret;
 
-    private String secret = "Nupsign1234";
+    @Value("${api.security.jwt.expiration}")
+    private int expiration;
 
     public TokenService(SimpleControllerHandlerAdapter simpleControllerHandlerAdapter) {
         this.simpleControllerHandlerAdapter = simpleControllerHandlerAdapter;
@@ -28,9 +31,9 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
             return JWT.create().withIssuer("NupSign")
-                .withSubject(usuario.getEmail())
-                .withExpiresAt(generateExpirationDate())
-                .sign(algorithm);
+                    .withSubject(usuario.getEmail())
+                    .withExpiresAt(generateExpirationDate())
+                    .sign(algorithm);
 
         } catch (JWTCreationException exception) {
             throw new RuntimeException("Error while generating token", exception);
@@ -42,10 +45,10 @@ public class TokenService {
             Algorithm algorithm = Algorithm.HMAC256(secret);
 
             return JWT.require(algorithm)
-                .withIssuer("NupSign")
-                .build()
-                .verify(token)
-                .getSubject();
+                    .withIssuer("NupSign")
+                    .build()
+                    .verify(token)
+                    .getSubject();
 
         } catch (JWTVerificationException exception) {
             return "";
@@ -53,6 +56,6 @@ public class TokenService {
     }
 
     private Instant generateExpirationDate() {
-        return LocalDateTime.now().plusHours(2).toInstant(ZoneOffset.of("-03:00"));
+        return LocalDateTime.now().plusHours(expiration).toInstant(ZoneOffset.of("-03:00"));
     }
 }

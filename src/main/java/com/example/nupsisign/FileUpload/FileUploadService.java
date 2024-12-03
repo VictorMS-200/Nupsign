@@ -38,9 +38,9 @@ public class FileUploadService implements IFileUploadService {
 
     // This method saves the file to the uploads directory
     @Override
-    public void save(MultipartFile file) {
+    public void save(MultipartFile file, String fileName) {
         try {
-            Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
+            Files.copy(file.getInputStream(), this.rootLocation.resolve(fileName));
         } catch (Exception e) {
             throw new RuntimeException("Could not store the file. Error: ", e);
         }

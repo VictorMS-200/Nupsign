@@ -53,13 +53,26 @@ $ git clone
 $ cd nupsign
 ```
 
+#### Importe o projeto no IntelliJ IDEA ou Eclipse
+
+Em seguida, abra o projeto em seu editor de código. Após isso, configure o arquivo `application.properties` com as informações do seu banco de dados.
+
+Com o banco de dados configurado, execute o projeto.
+
+##
+```bash
+$ ./mvnw spring-boot:run
+```
+
+O servidor inciará na porta:8080 - acesse [http://localhost:8080](http://localhost:8080)
+
 ## Endpoints
 
 ### Usuários
 
-#### POST /usuarios
+#### POST /auth/register
 
-Cria um novo usuário
+Cria um novo usuário e retorna o objeto criado.
 
 ```json
 {
@@ -68,6 +81,20 @@ Cria um novo usuário
     "senha": "{senha}"
 }
 ```
+
+#### POST /auth/login
+
+Realiza o login do usuário e retorna um token de autenticação JWT válido por 2 horas, com o qual o usuário pode acessar os endpoints protegidos e retorna o objeto criado.
+
+```json
+{
+    "email": "{email}",
+    "senha": "{senha}"
+}
+```
+Para configurar o token no Postman, vá em Authorization -> Type -> Bearer Token e cole o token no campo Token.
+
+Para mudar o tempo de expiração do token, vá em application.properties e altere a propriedade jwt.expiration.
 
 
 ## Autores
